@@ -18,17 +18,35 @@ Let’s start with a simple monitoring script that logs model accuracy. For demo
 
 
 
-
+### Install
 ```
 pip install -r requirements.txt
 ```
 
+### Run the application
 ```
 python app.py
 ```
 
-
+### Docker Build
 ```
 docker build -t model-monitor .
 docker run -p 8000:8000 model-monitor
 ```
+
+### Run the Docker Image
+```
+docker run -p 9090:9090 \
+  -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
+  prom/prometheus
+```
+Navigate to http://localhost:9090 to explore the metrics
+
+### Run the Docker Build for Grafana
+```
+docker run -d -p 3000:3000 grafana/grafana
+```
+
+* Log in at http://localhost:3000 (default user: admin / admin).
+* Add Prometheus as a data source (http://host.docker.internal:9090).
+* Create panels for accuracy over time, latency histograms, or drift metrics.

@@ -1,5 +1,9 @@
 # mointoring_open_telementry
 
+```
+git clone <repo>
+```
+
 #### Architecture Overview
 To implement monitoring effectively, a common stack combines several components working together:
 
@@ -11,6 +15,7 @@ To implement monitoring effectively, a common stack combines several components 
 
 #### Create a Python Monitoring Script
 Let’s start with a simple monitoring script that logs model accuracy. For demonstration, we’ll simulate predictions and true labels instead of using a real dataset.
+
 
 
 

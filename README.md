@@ -11,3 +11,19 @@ To implement monitoring effectively, a common stack combines several components 
 
 #### Create a Python Monitoring Script
 Let’s start with a simple monitoring script that logs model accuracy. For demonstration, we’ll simulate predictions and true labels instead of using a real dataset.
+
+
+
+```
+pip install -r requirements.txt
+```
+
+```
+python app.py
+```
+
+
+```
+docker build -t model-monitor .
+docker run -p 8000:8000 model-monitor
+```
